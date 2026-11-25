@@ -17,17 +17,20 @@
 ## 3. Đóng góp cụ thể
 
 - Tính lại toàn bộ A2, A3, A4, B1–B4 bằng một cách tính độc lập (gộp chi phí theo từng yêu cầu trước khi cộng). Kết quả khớp 100% với output `src/lab13.py` của Hà Anh: chi phí mỗi việc thành công 4.472 đ [simulated], gấp 16,3 lần hoá đơn token chia số yêu cầu; B3 giới hạn 2 lần rẻ nhất cho công ty (6.901.220 đ [simulated]).
-- Điền D1 (a–e) vào phần chú thích `pilot_plan.yaml`: 1.251 yêu cầu mỗi nhóm; 20 nhân viên mỗi nhóm tối đa 1.000; mức chênh 6 điểm cần m ≥ 299.
-- (Bổ sung sau CP3–CP5.)
+- Viết phần D1 trong `src/lab13.py`: hàm `co_mau`, `he_so_thiet_ke`, `m_toi_thieu`, `in_co_mau`. Kết quả: 1.251 yêu cầu mỗi nhóm; theo nhân viên m = 75 cần 42 người mỗi nhóm (84 > 40); 20 nhân viên mỗi nhóm tối đa 1.000; 6 depot tối đa 300; mức chênh 6 điểm cần m ≥ 299 (DE 6,96); nếu tác động thật chỉ 5 điểm thì power còn 0,64.
+- Hoàn thiện `pilot_plan.yaml`: chia theo nhân viên 20 + 20, mde 0,06, n 859 mỗi nhóm, 20 cụm; điền identifiability theo D2 của Nhài; rollback; decision_date 2027-01-08 (bước 50% cần khoảng 10 ngày vì mỗi người có 30,7 yêu cầu trong phạm vi mỗi ngày, cộng 7 ngày chờ cửa sổ mở lại); danh sách simulated_inputs. File đọc được bằng `yaml.safe_load`, không còn dấu `?`.
+- Rà soát CP5: không còn từ cấm trong `report/team/`.
+- (Bổ sung CP3 sau khi gắn nhãn.)
 
 ## 4. Bằng chứng
 
-- `report/team/pilot_plan.yaml` (phần chú thích D1 a–e); kết quả kiểm số khớp `report/team/bang_chi_phi.md`.
-- (Bổ sung hash commit.)
+- Commit `c69cb34`: chú thích D1 (a–e) trong `pilot_plan.yaml`, thông tin trong `TEAM.md`.
+- Commit "CP4: cỡ mẫu D1 trong lab13.py, hoàn thiện pilot_plan.yaml": phần D1 của `src/lab13.py` và các trường còn lại của `pilot_plan.yaml`.
+- Kết quả kiểm số khớp `report/team/bang_chi_phi.md`.
 
 ## 5. Công cụ AI đã dùng
 
-- Claude Code: viết script kiểm số độc lập cho A, B, D1 và điền D1 vào `pilot_plan.yaml`. Tự kiểm tra bằng cách so từng con số với số đối chiếu trong `docs/Lab13_Huong_dan_chi_tiet_buoi_chieu.md` (lệch dưới 0,1%) và đối chiếu với output `src/lab13.py` của người viết code.
+- Claude Code: hỗ trợ viết script kiểm số độc lập cho A, B, D1, viết phần D1 trong `src/lab13.py` và điền `pilot_plan.yaml`. Tự kiểm tra bằng cách so từng con số với số đối chiếu trong `docs/Lab13_Huong_dan_chi_tiet_buoi_chieu.md` (lệch dưới 0,1%), đối chiếu với output `src/lab13.py` của người viết code, và tính tay câu e: 20m ≥ 859 × (0,98 + 0,02m) → m ≥ 298,5 → 299.
 - Không dùng AI để gắn nhãn 20 ca lỗi ở CP3.
 
 ## 6. Tự đánh giá

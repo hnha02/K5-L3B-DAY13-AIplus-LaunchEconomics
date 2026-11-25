@@ -26,26 +26,26 @@
 #   (chênh ≥ +2 điểm) kèm trần tuyệt đối 6%.
 
 pilot:
-  owner: "?"                      # một người có tên vai trò, không ghi "cả đội"
-  scope: "?"                      # loại yêu cầu nào, depot nào; dựa vào kết quả A3
+  owner: "Giám đốc vận hành LogiX-VN"
+  scope: "Chỉ noi_dia và hang_nang (0,22× và 0,69× của 12.000 đ, simulated), cả 12 depot với 40 nhân viên CSKH; loại quoc_te (1,88×, thành công 27,3%) và doi_tac (0,85×, điều khoản riêng)"
   assignment:
-    unit: "?"                     # request | staff | depot
+    unit: "staff"                 # 20 nhân viên dùng trợ lý, 20 đối chứng, bốc thăm phân tầng theo depot
     control_share: 0.5
     randomized: true
-  rollout: [0.10, 0.25, 0.50]     # mỗi bước một tuần
+  rollout: [0.10, 0.25, 0.50]     # mỗi bước một tuần: 4 → 10 → 20 nhân viên; chỉ số chính chỉ đo từ bước 0.50
   primary_metric:
     name: dong_trong_24h_khong_mo_lai_7_ngay
     baseline: 0.70
-    mde: 0.05
+    mde: 0.06                     # đánh đổi: 0,05 cần 1.251 mỗi nhóm, vượt trần 1.000 của 20 cụm
     alpha: 0.05
     power: 0.80
-    n_per_arm: "?"
-    design_effect: "?"            # 1 nếu chia theo yêu cầu
-    clusters_per_arm: "?"         # để trống nếu chia theo yêu cầu
+    n_per_arm: 859
+    design_effect: 6.96           # m = 299 yêu cầu mỗi nhân viên
+    clusters_per_arm: 20
   identifiability:
-    concurrent_control: "?"
-    spillover_risk: "?"
-    predeclared: "?"
+    concurrent_control: "Có: 20 nhân viên đối chứng làm cùng tuần, cùng depot với 20 nhân viên dùng trợ lý"
+    spillover_risk: "Nhân viên cùng depot có thể chia sẻ câu trả lời của trợ lý; giảm bằng phân quyền theo tài khoản và log lượt mở trợ lý theo staff_id, nhóm đối chứng có lượt mở thì loại khỏi phân tích"
+    predeclared: "Chỉ số chính, mde 0,06, ba luật dừng và decision_date chốt bằng văn bản trước ngày bắt đầu 2026-12-07; seed bốc thăm ghi trước"
   stop_rules:
     # An toàn
     - "NẾU tỉ lệ mở lại 7 ngày của nhóm trợ lý cao hơn nhóm đối chứng từ 2 điểm trở lên, hoặc vượt 6%, hoặc có từ 1 ca hoàn tiền trùng TRONG 3 ngày liên tiếp THÌ Giám đốc vận hành tắt trợ lý trong 30 phút và chuyển toàn bộ yêu cầu về luồng nhân viên KHÔNG THÌ không được sang bước rollout tiếp theo"
@@ -54,6 +54,11 @@ pilot:
     # Mức độ sử dụng
     - "NẾU tỉ lệ bỏ qua gợi ý (sửa + bỏ) vượt 40% (đợt chạy thử 27,12%) TRONG 1 tuần THÌ Trưởng nhóm CSKH phỏng vấn 5 nhân viên và rà 20 trace bị bỏ trong 3 ngày làm việc KHÔNG THÌ không được chuyển bước rollout"
   interim_looks: "chỉ kiểm tra chỉ số an toàn"
-  rollback: "?"                   # ai bấm, mất bao lâu, khách được phục vụ bằng gì
-  decision_date: "?"
-  simulated_inputs: ["?"]         # liệt kê mọi con số giả lập đã dùng
+  rollback: "Giám đốc vận hành bật cờ tắt trợ lý, hiệu lực trong 30 phút; yêu cầu đang mở chuyển về hàng đợi nhân viên tự làm như trước pilot, khách không phải gửi lại yêu cầu"
+  # Bắt đầu 2026-12-07; bước 0.50 từ 2026-12-21, cần khoảng 10 ngày để mỗi người đủ 299 yêu cầu
+  # (30,7 yêu cầu trong phạm vi/người/ngày), cộng 7 ngày chờ cửa sổ mở lại.
+  decision_date: "2027-01-08"
+  simulated_inputs:               # mọi con số giả lập đã dùng trong file này
+    - "phut_xem_lai_simulated, phut_lam_lai_simulated (hai cột phút trong logix_requests.csv)"
+    - "Chi phí mỗi việc thành công trong phạm vi 3.414 đ và tỉ lệ 0,22× / 0,69× / 0,85× / 1,88× của 12.000 đ (scope)"
+    - "Mốc 3.414 đ trong luật dừng chi phí"

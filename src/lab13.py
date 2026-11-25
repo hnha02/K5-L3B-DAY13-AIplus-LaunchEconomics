@@ -4,7 +4,11 @@ Không cần khoá API. Điền các chỗ ghi VIẾT Ở ĐÂY (đánh dấu TO
 Bản gốc chưa sửa nằm ở lab13_starter.py.
 """
 import math
+from statistics import NormalDist
+
 import pandas as pd
+from statsmodels.stats.power import NormalIndPower
+from statsmodels.stats.proportion import proportion_effectsize
 
 # Bảng giá GIẢ ĐỊNH của lab (không phải giá thật của nhà cung cấp nào)
 GIA_VAO = 26        # đồng cho 1.000 token đầu vào
@@ -76,6 +80,64 @@ def mo_hinh(runs, reqs, gia_vao=26, gia_ra=130, gia_tool=15, luong_phut=2000,
                 xem_lai=xem_lai, lam_lai=lam_lai, tong=tong,
                 thanh_cong=thanh_cong, cps=tong / thanh_cong,
                 hoa_don_moi_yc=(token + tool) / len(reqs))
+
+
+# ---------- Nhiệm vụ D1 · Cỡ mẫu pilot ----------
+CHI_SO_HIEN_TAI = 0.70   # chỉ số chính hiện tại (đề cho)
+ICC = 0.02
+NV_MOI_NHOM = 20         # 40 nhân viên CSKH chia đôi
+DEPOT_MOI_NHOM = 6       # 12 depot chia đôi
+YC_MOI_NGAY = 1500
+SO_NHAN_VIEN = 40
+
+
+def co_mau(p1, p2, alpha=0.05, power=0.8):
+    """Cỡ mẫu mỗi nhóm để phân biệt hai tỉ lệ p1, p2 (chia theo yêu cầu, không có cụm)."""
+    za = NormalDist().inv_cdf(1 - alpha / 2)
+    zb = NormalDist().inv_cdf(power)
+    p_tb = (p1 + p2) / 2
+    tu = za * math.sqrt(2 * p_tb * (1 - p_tb)) + zb * math.sqrt(p1 * (1 - p1) + p2 * (1 - p2))
+    return math.ceil(tu ** 2 / (p2 - p1) ** 2)
+
+
+def he_so_thiet_ke(m, icc=ICC):
+    """DE = 1 + (m - 1) * ICC, m là số yêu cầu mỗi cụm."""
+    return 1 + (m - 1) * icc
+
+
+def m_toi_thieu(n_can, so_cum, icc=ICC):
+    """Số yêu cầu ít nhất mỗi cụm để so_cum cụm đạt n_can hiệu dụng.
+    Giải so_cum * m / DE(m) >= n_can. Trả về None nếu so_cum / icc <= n_can (không bao giờ đủ)."""
+    if so_cum / icc <= n_can:
+        return None
+    return math.ceil(n_can * (1 - icc) / (so_cum - n_can * icc))
+
+
+def in_co_mau(reqs):
+    """In năm câu D1 và các số dùng để chọn cách chia, ngày quyết định."""
+    n5 = co_mau(CHI_SO_HIEN_TAI, CHI_SO_HIEN_TAI + 0.05)
+    n6 = co_mau(CHI_SO_HIEN_TAI, CHI_SO_HIEN_TAI + 0.06)
+    de75 = he_so_thiet_ke(75)
+    n_theo_nv = n5 * de75
+    nv_can = math.ceil(n_theo_nv / 75)
+    m6 = m_toi_thieu(n6, NV_MOI_NHOM)
+    power_5_diem = NormalIndPower().power(proportion_effectsize(0.75, 0.70), nobs1=n6, alpha=0.05)
+
+    print('\nD1 · Cỡ mẫu (chỉ số chính 0,70; alpha 0,05; power 0,8; ICC 0,02)')
+    print(f'  a) Theo yêu cầu, +5 điểm: {n5:,} yêu cầu mỗi nhóm')
+    print(f'  b) Theo nhân viên, m = 75: DE {de75:.2f} → {math.ceil(n_theo_nv):,} mỗi nhóm'
+          f' → {nv_can} người mỗi nhóm, tổng {2 * nv_can} > {SO_NHAN_VIEN}: không đủ người')
+    print(f'  c) {NV_MOI_NHOM} nhân viên mỗi nhóm: tối đa {NV_MOI_NHOM / ICC:,.0f} < {n5:,}: không đạt')
+    print(f'  d) {DEPOT_MOI_NHOM} depot mỗi nhóm: tối đa {DEPOT_MOI_NHOM / ICC:,.0f}')
+    print(f'  e) +6 điểm ({n6} mỗi nhóm), {NV_MOI_NHOM} nhân viên mỗi nhóm:'
+          f' m ≥ {m6} yêu cầu mỗi người (DE {he_so_thiet_ke(m6):.2f})')
+    print(f'  Nếu tác động thật chỉ +5 điểm, với n = {n6} power còn {power_5_diem:.2f}')
+
+    # Mỗi nhân viên cần bao nhiêu ngày để có m6 yêu cầu trong phạm vi
+    ti_le_pham_vi = reqs['loai'].isin(['noi_dia', 'hang_nang']).mean()
+    yc_moi_nv_ngay = YC_MOI_NGAY / SO_NHAN_VIEN * ti_le_pham_vi
+    print(f'  Phạm vi noi_dia + hang_nang chiếm {ti_le_pham_vi:.1%} → {yc_moi_nv_ngay:.1f} yêu cầu/người/ngày'
+          f' → cần khoảng {math.ceil(m6 / yc_moi_nv_ngay)} ngày ở bước 50% để mỗi người đủ {m6}')
 
 
 if __name__ == '__main__':
@@ -176,6 +238,5 @@ if __name__ == '__main__':
           f" trong phạm vi noi_dia + hang_nang {(pham_vi['mo_lai_trong_7_ngay'] == 1).mean():.2%}")
     print(f"  Tỉ lệ làm lại trong phạm vi: {so_lam_lai / len(pham_vi):.1%} ({so_lam_lai}/{len(pham_vi)})")
 
-    # TODO CP4 · Nhiệm vụ D: cỡ mẫu.
-    #   from statsmodels.stats.proportion import proportion_effectsize
-    #   from statsmodels.stats.power import NormalIndPower
+    # ---------- CP4 · Nhiệm vụ D1 · cỡ mẫu ----------
+    in_co_mau(reqs)
