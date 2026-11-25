@@ -20,7 +20,7 @@
 - D2: trả lời năm câu cho cách chia 20 + 20 nhân viên; ghi đánh đổi mức chênh 6 điểm, power 0,64 nếu tác động thật là 5 điểm.
 - Báo cáo nhóm: tóm tắt cách làm A–E, kết quả chính, khó khăn (nhóm 3 người, xung đột khi push).
 - CP3: gắn nhãn độc lập 20 ca (người gắn nhãn 2), trùng với Tiệp 19/20 = 95%; cùng Tiệp thống nhất ca 13 là Giới hạn hệ thống và làm bảng khắc phục 5 ca đủ năm loại.
-- Duyệt chéo: (điền sau 17:25: nhóm đã chấm, điểm, câu hỏi đã đặt).
+- Duyệt chéo: hội đồng AIplus chấm nhóm GeminiPro 25/30 (10 · 10 · 5), quyết định Go có điều kiện; trừ điểm tiêu chí pilot vì không ghi vai có quyền dừng và rollout 10%→25%→50% mâu thuẫn với chia cố định 20 + 20. Câu hỏi đã đặt: "Ai có quyền ra lệnh tắt pilot trong 30 phút khi luật dừng an toàn bị kích hoạt?"
 
 ## 4. Bằng chứng
 
@@ -28,7 +28,7 @@ Commit, file, bảng hoặc con số do bạn làm.
 
 - Commit `e99647f` (Hồ sơ launch v0: bản nháp mục 1-4, 7 và đề xuất)
 - `report/team/ho_so_launch_v0.md`, `report/team/group_report.md`, mục D2 trong `report/team/pilot_plan.yaml`
-- (bổ sung commit CP3 và phiếu chấm)
+- Commit `c725def` (nhãn CP3), `b405e4c` (phiếu chấm nhóm GeminiPro)
 
 ## 5. Công cụ AI đã dùng
 
