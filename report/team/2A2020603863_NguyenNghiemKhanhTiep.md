@@ -20,7 +20,7 @@
 - Viết phần D1 trong `src/lab13.py`: hàm `co_mau`, `he_so_thiet_ke`, `m_toi_thieu`, `in_co_mau`. Kết quả: 1.251 yêu cầu mỗi nhóm; theo nhân viên m = 75 cần 42 người mỗi nhóm (84 > 40); 20 nhân viên mỗi nhóm tối đa 1.000; 6 depot tối đa 300; mức chênh 6 điểm cần m ≥ 299 (DE 6,96); nếu tác động thật chỉ 5 điểm thì power còn 0,64.
 - Hoàn thiện `pilot_plan.yaml`: chia theo nhân viên 20 + 20, mde 0,06, n 859 mỗi nhóm, 20 cụm; điền identifiability theo D2 của Nhài; rollback; decision_date 2027-01-08 (bước 50% cần khoảng 10 ngày vì mỗi người có 30,7 yêu cầu trong phạm vi mỗi ngày, cộng 7 ngày chờ cửa sổ mở lại); danh sách simulated_inputs. File đọc được bằng `yaml.safe_load`, không còn dấu `?`.
 - Rà soát CP5: không còn từ cấm trong `report/team/`.
-- (Bổ sung CP3 sau khi gắn nhãn.)
+- CP3: gắn nhãn độc lập 20 ca (người gắn nhãn 1), không trao đổi với Nhài trước khi so. Đồng thuận 19/20 = 95%, lệch ở ca 13.
 
 ## 4. Bằng chứng
 
