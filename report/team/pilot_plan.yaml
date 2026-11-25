@@ -18,7 +18,9 @@
 #
 # Đánh đổi đã chấp nhận (nếu cách chia chưa đạt cả hai điều kiện):
 #
-# Tỉ lệ mo_lai_trong_7_ngay hiện tại và ngưỡng an toàn đã chọn:
+# Tỉ lệ mo_lai_trong_7_ngay hiện tại và ngưỡng an toàn đã chọn: hiện tại 4,25% (51/1.200), trong phạm vi
+#   noi_dia + hang_nang 3,97%. Ngưỡng tuyệt đối 3% sẽ dừng pilot ngay tuần đầu, nên so với nhóm đối chứng
+#   (chênh ≥ +2 điểm) kèm trần tuyệt đối 6%.
 
 pilot:
   owner: "?"                      # một người có tên vai trò, không ghi "cả đội"
@@ -42,9 +44,12 @@ pilot:
     spillover_risk: "?"
     predeclared: "?"
   stop_rules:
-    - "NẾU ? TRONG ? THÌ ? KHÔNG THÌ ?"
-    - "NẾU ? TRONG ? THÌ ? KHÔNG THÌ ?"
-    - "NẾU ? TRONG ? THÌ ? KHÔNG THÌ ?"
+    # An toàn
+    - "NẾU tỉ lệ mở lại 7 ngày của nhóm trợ lý cao hơn nhóm đối chứng từ 2 điểm trở lên, hoặc vượt 6%, hoặc có từ 1 ca hoàn tiền trùng TRONG 3 ngày liên tiếp THÌ Giám đốc vận hành tắt trợ lý trong 30 phút và chuyển toàn bộ yêu cầu về luồng nhân viên KHÔNG THÌ không được sang bước rollout tiếp theo"
+    # Chi phí
+    - "NẾU chi phí mỗi việc thành công đo thật vượt 8.000 đ (0,67× của 12.000 đ; đợt chạy thử 3.414 đ simulated trong phạm vi) TRONG 2 tuần liên tiếp THÌ PM trợ lý hoàn phí thu hẹp về noi_dia và giới hạn tối đa 2 lần chạy KHÔNG THÌ không được mở thêm depot hay loại yêu cầu"
+    # Mức độ sử dụng
+    - "NẾU tỉ lệ bỏ qua gợi ý (sửa + bỏ) vượt 40% (đợt chạy thử 27,12%) TRONG 1 tuần THÌ Trưởng nhóm CSKH phỏng vấn 5 nhân viên và rà 20 trace bị bỏ trong 3 ngày làm việc KHÔNG THÌ không được chuyển bước rollout"
   interim_looks: "chỉ kiểm tra chỉ số an toàn"
   rollback: "?"                   # ai bấm, mất bao lâu, khách được phục vụ bằng gì
   decision_date: "?"
