@@ -38,4 +38,7 @@ Công cụ nào, dùng vào việc gì, bạn tự kiểm tra kết quả ra sao
 
 ## 6. Tự đánh giá
 
-- (tự điền)
+- **Làm tốt:** hồ sơ launch đủ bảy mục, mỗi mục có con số, trạng thái và vai trò phụ trách; đề xuất Go có điều kiện nêu cả con số bất lợi (0,98× khi xem lại 100% [simulated], power 0,64) và 4 điều kiện có ngày kiểm tra. Nhãn CP3 tự gắn, đồng thuận với Tiệp 19/20 = 95%.
+- **Hiểu được:** gắn nhãn theo nguyên nhân gốc chứ không theo chỗ cần sửa (ca 13: ngoài phạm vi thì là giới hạn hệ thống dù trợ lý phản hồi kém); vì sao chỉ viết "chỉ số trong đợt chạy thử là 82,83%" mà không nói trợ lý đã nâng chỉ số.
+- **Chưa tốt:** ca 13 gắn nhầm thành lỗi hệ thống vì nhìn vào cách trợ lý trả lời thay vì nguyên nhân gốc; bản nháp hồ sơ và báo cáo nhóm soạn cùng Claude Code nên phải đối chiếu lại từng số với `bang_chi_phi.md` và `lab13.py` (đã phát hiện và sửa một số sai: 6/20 → 5/20 ca lỗi hệ thống).
+- **Lần sau:** điền hồ sơ dần từ đầu buổi thay vì dồn cuối; đọc kỹ định nghĩa năm loại lỗi trước khi gắn nhãn.
