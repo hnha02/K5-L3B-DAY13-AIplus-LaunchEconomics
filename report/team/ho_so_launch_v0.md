@@ -14,7 +14,7 @@ Nhóm: AIplus · Lớp: L3B
 | 6 · Pilot plan | Chia theo nhân viên 20 + 20, ngẫu nhiên phân tầng theo depot; 859/nhóm, DE 6,96, m ≥ 299; mde 6 điểm (**bất lợi:** power 0,64 nếu tác động thật 5 điểm); 3 luật dừng; quyết định 2027-01-08 | Xong, có bằng chứng | Giám đốc vận hành |
 | 7 · Rủi ro kinh tế | Làm lại gấp đôi → 6.787 đ (+51,8%); xem lại 100% kéo dài → 0,98×; khối lượng còn một nửa → +2.370 đ/việc cố định [simulated] | Giả lập | PM trợ lý hoàn phí |
 
-**Đề xuất (nháp, cả nhóm chốt lúc ~16:50):** Go có điều kiện, chỉ cho pilot noi_dia + hang_nang; loại quoc_te (1,88×) và doi_tac (0,85×) [simulated].
+**Đề xuất:** Go có điều kiện, chỉ cho pilot noi_dia + hang_nang; loại quoc_te (1,88×) và doi_tac (0,85×) [simulated].
 
 - Điều kiện 1: có kế hoạch giảm xem lại theo bậc trước ngày bắt đầu, vì xem lại 100% cho 0,98× tức gần như không tiết kiệm [simulated]; mục tiêu mỗi lần xem lại ≤ 5 phút. Người phụ trách: Trưởng nhóm CSKH. Ngày kiểm tra: 2026-12-04, xem lại cuối bước 0,25 (2026-12-20).
 - Điều kiện 2: bật đủ 10 event có `trace_id`, thay phút xem lại/làm lại simulated bằng phút đo thật sau tuần 1. Người phụ trách: Kỹ sư trưởng agent. Ngày kiểm tra: 2026-12-04 (event), 2026-12-14 (phút đo thật).
