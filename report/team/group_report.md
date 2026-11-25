@@ -29,7 +29,7 @@ Dựng hồ sơ launch v0 cho trợ lý hoàn phí LogiX-VN để hội đồng 
 - Pilot: theo nhân viên 20 + 20, đủ mẫu cho mức chênh 6 điểm, không đủ cho 5 điểm (power 0,64).
 - Bảng lỗi: hai người gắn nhãn độc lập đồng thuận 19/20 = 95%; ca lệch duy nhất (ca 13) thống nhất là Giới hạn hệ thống.
 - Đề xuất cuối: **Go có điều kiện** cho pilot noi_dia + hang_nang, với 4 điều kiện (chống trùng và đối soát sổ cái, giảm xem lại theo bậc, đủ event có `trace_id`, ký chấp nhận mức chênh 6 điểm) trong `ho_so_launch_v0.md`.
-- Kết quả duyệt chéo nhóm nhận được: .../30, quyết định của hội đồng: ... (điền sau 17:25).
+- Kết quả duyệt chéo nhóm nhận được: 25/30 (10 · 10 · 5). Phiếu do AIplus tự soát theo rubric (`phieu_cham_nhan_duoc.md`); hội đồng GeminiPro đã xem và đồng ý giữ nguyên điểm. Trừ 5 điểm tiêu chí pilot vì mục 6 hồ sơ chỉ ghi "3 luật dừng", không có ngưỡng, thời hạn và vai có quyền dừng (chi tiết chỉ có trong `pilot_plan.yaml`). Quyết định của hội đồng: ... (phiếu không ghi).
 
 ## 5. Khó khăn và cách xử lý
 
