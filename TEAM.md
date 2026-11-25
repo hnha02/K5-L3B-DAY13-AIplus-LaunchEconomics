@@ -5,7 +5,7 @@
 - Tên nhóm: AIplus
 - Lớp: L3B
 - Repo nhóm: `K5-L3B-DAY13-AIplus-LaunchEconomics` (xem [SUBMISSION.md](SUBMISSION.md))
-- URL repo, nhánh nộp, commit chốt: https://github.com/hnha02/K5-L3B-DAY13-AIplus-LaunchEconomics · `main` · `e681f6e`
+- URL repo, nhánh nộp, commit chốt: https://github.com/hnha02/K5-L3B-DAY13-AIplus-LaunchEconomics · `main` · `67fc0ab`
 
 ## Thành viên
 
