@@ -12,7 +12,7 @@
 | STT | Họ tên | MSSV | Email | GitHub | Vai trò |
 | --: | ------ | ---- | ----- | ------ | ------- |
 |   1 | Trần Thị Hà Anh | 2A202603887 | 26ai.anhtth@vinuni.edu.vn | hnha02 | Người viết code (CP1–CP2) → người kiểm số (CP4–CP5); phụ trách `chi_so.md`, commit/push |
-|   2 | Tiệp | | | | Người kiểm số (CP1–CP2), người gắn nhãn 1 (CP3) → người viết code sau giải lao (CP4) |
+|   2 | Nguyễn Nghiêm Khánh Tiệp | 2A2020603863 | tiepnnk04@gmail.com | tiepnnk01-10 | Người kiểm số (CP1–CP2), người gắn nhãn 1 (CP3) → người viết code sau giải lao (CP4) |
 |   3 | Nhài | | | | Người gắn nhãn 2 (CP3), kiêm giữ hồ sơ từ đầu buổi; phụ trách `phieu_cham.md`, `group_report.md` |
 
 Nhóm có 3 người nên gộp bốn vai như sau: vai **người kiểm số** do Tiệp giữ ở CP1–CP2, chuyển sang Hà Anh từ CP4 (khi Tiệp nhận viết code). Hai người gắn nhãn độc lập ở CP3 là Tiệp và Nhài; trong lúc đó Hà Anh hoàn thiện CP2.
