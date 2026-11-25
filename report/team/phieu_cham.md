@@ -18,4 +18,4 @@ Nhóm số n chấm nhóm số n + 1; nhóm cuối chấm nhóm 1. Chấm theo b
 
 **Một câu hỏi cho đội trình:** Ai có quyền ra lệnh tắt pilot trong 30 phút khi luật dừng an toàn bị kích hoạt?
 
-**Câu trả lời của đội trình (ghi lại tại buổi):** ...
+**Câu trả lời của đội trình (ghi lại tại buổi):** Giám đốc vận hành LogiX-VN có quyền ra lệnh tắt pilot. Kỹ sư trưởng agent chịu trách nhiệm thực hiện tắt trợ lý trong vòng 30 phút và chuyển các yêu cầu đang mở về hàng đợi nhân viên. Nếu Giám đốc vận hành không phản hồi trong 15 phút, Kỹ sư trưởng agent được quyền chủ động tắt trước và báo cáo sau để hạn chế rủi ro.
