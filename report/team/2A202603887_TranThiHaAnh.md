@@ -40,4 +40,7 @@ Công cụ nào, dùng vào việc gì, bạn tự kiểm tra kết quả ra sao
 
 ## 6. Tự đánh giá
 
-- (tự điền)
+- **Làm tốt:** phần A và B qua đủ ba phép thử và khớp số đối chiếu (4.472 đ, 16,3 lần, B1 đủ 9 dòng) [simulated]; mọi số giả lập có nhãn simulated; Tiệp kiểm lại độc lập và khớp 100%.
+- **Hiểu được:** chi phí thật nằm ở giờ nhân viên (92,5% tổng chi phí [simulated]), không phải token; tối ưu chi phí mỗi việc thành công (giới hạn 1 lần) khác với tối ưu chi phí cả hệ thống (giới hạn 2 lần); xem lại 100% làm mất gần hết tiết kiệm (0,98×) [simulated].
+- **Chưa tốt:** dựa nhiều vào Claude Code để viết code, nên phải dành thêm thời gian đọc lại từng hàm để tự giải thích được (vì sao tử số tính mọi lần chạy, vì sao giới hạn lần chạy đẩy ca sang nhân viên). Quản lý git chưa gọn: có xung đột khi nhiều người cùng sửa `TEAM.md`.
+- **Lần sau:** tự viết khung hàm trước rồi mới nhờ AI soát; chia file rõ cho từng người để tránh xung đột; pull trước mỗi lần sửa.
