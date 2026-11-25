@@ -4,7 +4,7 @@
 
 - Họ tên: Trần Thị Hà Anh
 - MSSV: 2A202603887
-- Email: 26ai.anhtth@vinuni.edu.vn
+- Email: tranthihaanh200204@gmail.com
 - Vai trong nhóm (người viết code, người kiểm số, người gắn nhãn 1, người gắn nhãn 2 kiêm giữ hồ sơ): Người viết code (CP1–CP2), chuyển sang người kiểm số (CP4–CP5); commit/push bài nộp.
 
 ## 2. Phần việc phụ trách
