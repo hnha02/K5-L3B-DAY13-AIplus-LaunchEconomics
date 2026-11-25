@@ -26,7 +26,7 @@
 
 Commit, file, bảng hoặc con số do bạn làm.
 
-- Commit `bc77e8e` (Hồ sơ launch v0: bản nháp mục 1-4, 7 và đề xuất)
+- Commit `e99647f` (Hồ sơ launch v0: bản nháp mục 1-4, 7 và đề xuất)
 - `report/team/ho_so_launch_v0.md`, `report/team/group_report.md`, mục D2 trong `report/team/pilot_plan.yaml`
 - (bổ sung commit CP3 và phiếu chấm)
 
