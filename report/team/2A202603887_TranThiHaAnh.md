@@ -30,7 +30,7 @@ Commit, file, bảng hoặc con số do bạn làm.
 
 - `src/lab13.py` (chạy `python lab13.py` trong `src/` in ra toàn bộ số A, B, E1)
 - `report/team/bang_chi_phi.md`, `report/team/chi_so.md`, phần `stop_rules` và chú thích tỉ lệ mở lại trong `report/team/pilot_plan.yaml`
-- Commit: (điền hash sau khi push)
+- Commit: `1005c90` (CP1-CP2: mô hình chi phí, độ nhạy; chỉ số E1, luật dừng D)
 
 ## 5. Công cụ AI đã dùng
 
