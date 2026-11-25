@@ -27,7 +27,7 @@ Dựng hồ sơ launch v0 cho trợ lý hoàn phí LogiX-VN để hội đồng 
 - quoc_te 1,88× và doi_tac 0,85× [simulated] nên loại khỏi phạm vi pilot.
 - Chỉ số trong đợt chạy thử: chính 82,83%, bỏ qua gợi ý 27,12%, mở lại 7 ngày 4,25%.
 - Pilot: theo nhân viên 20 + 20, đủ mẫu cho mức chênh 6 điểm, không đủ cho 5 điểm (power 0,64).
-- Bảng lỗi: đồng thuận .../20 (điền sau CP3).
+- Bảng lỗi: hai người gắn nhãn độc lập đồng thuận 19/20 = 95%; ca lệch duy nhất (ca 13) thống nhất là Giới hạn hệ thống.
 - Đề xuất cuối: (điền sau khi nhóm chốt, xem `ho_so_launch_v0.md`).
 - Kết quả duyệt chéo nhóm nhận được: .../30, quyết định của hội đồng: ... (điền sau 17:25).
 
