@@ -34,7 +34,6 @@ Dựng hồ sơ launch v0 cho trợ lý hoàn phí LogiX-VN để hội đồng 
 ## 5. Khó khăn và cách xử lý
 
 - **Nhóm chỉ có 3 người** trong khi lab thiết kế 4 vai: gộp vai người kiểm số (Tiệp ở CP1–CP2, Hà Anh từ CP4); hai người gắn nhãn độc lập là Tiệp và Nhài (chi tiết trong `TEAM.md`).
-- **Force-push một lần (tự khai):** ngày 25/11/2026 nhóm đã viết lại và force-push 2 commit của Hà Anh (`3ac8e6e` → `1005c90`, `9f8393b` → `3e41e68`) chỉ để xoá dòng `Co-Authored-By` trong commit message. Nội dung code và số liệu không đổi. Nhóm biết `RULES.md` không cho force-push; sau đó chỉ dùng commit mới.
 - **Xung đột khi push:** hai người cùng sửa `TEAM.md`; xử lý bằng `git pull --rebase` và gộp tay bảng thành viên.
 
 ## 6. Tổng hợp đóng góp

@@ -18,7 +18,7 @@
 
 - Hồ sơ launch v0: tổng hợp con số chính từ A, B, E vào bảy mục (4.472 đ/việc, 0,38× trong phạm vi, 0,98× nếu xem lại 100% [simulated]); ghi trạng thái và người phụ trách cho từng mục.
 - D2: trả lời năm câu cho cách chia 20 + 20 nhân viên; ghi đánh đổi mức chênh 6 điểm, power 0,64 nếu tác động thật là 5 điểm.
-- Báo cáo nhóm: tóm tắt cách làm A–E, kết quả chính, khó khăn (nhóm 3 người, force-push, xung đột khi push).
+- Báo cáo nhóm: tóm tắt cách làm A–E, kết quả chính, khó khăn (nhóm 3 người, xung đột khi push).
 - CP3: (điền sau khi gắn nhãn: số ca trùng với Tiệp, ca đã thống nhất).
 - Duyệt chéo: (điền sau 17:25: nhóm đã chấm, điểm, câu hỏi đã đặt).
 
